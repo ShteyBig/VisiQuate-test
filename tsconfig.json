@@ -6,10 +6,13 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": true,
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
+    "suppressImplicitAnyIndexErrors": true,
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
@@ -19,6 +22,7 @@
       "dom"
     ]
   },
+  "exclude": ["node_modules"],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
