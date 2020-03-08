@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserListItemComponent } from '../user-list-item/user-list-item.component';
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  searchUser: string;
+  constructor(
+  ) { }
 
   ngOnInit() {
   }
 
+  onSearchUser(event: string){
+    this.searchUser = event;
+    console.log("event from parent", event)
+  }
 }

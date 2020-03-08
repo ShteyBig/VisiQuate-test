@@ -1,0 +1,10 @@
+<div class="user-list">
+    <app-user-search
+        class="user-search" 
+        (userToFind)="onSearchUser($event)"
+    ></app-user-search>
+    <app-user-list-item 
+        class="user-list-item"
+        [filteredUser]="searchUser"
+    ></app-user-list-item>
+</div>

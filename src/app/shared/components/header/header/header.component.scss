@@ -3,7 +3,6 @@ header {
     height: 50px;
     border-bottom: 1px black solid;
     box-shadow: 0 2px 2px #bbbbbb;
-    align-items: center;
-    position: fixed;
-    top: 0;
+    text-align: center;
+    z-index: 10;
 }

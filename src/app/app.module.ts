@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { sharedComponents } from './shared';
 import { RepoListViewModule } from './modules/repo-list-view/repo-list-view.module';
 import { UserListModule } from './modules/user-list/user-list.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UserListModule } from './modules/user-list/user-list.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RepoListViewModule,
     UserListModule
   ],

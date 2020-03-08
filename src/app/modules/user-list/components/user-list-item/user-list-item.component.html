@@ -1,0 +1,8 @@
+<div class="container">
+    <ul *ngFor="let userCard of userFound">
+        <li class="card">
+            <img [src]="userCard.avatar_url" alt="">
+            <p>{{userCard.login}}</p>
+        </li>
+    </ul>
+</div>

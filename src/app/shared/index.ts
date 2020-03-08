@@ -1,8 +1,8 @@
-import { HeaderComponent } from './header/header/header.component';
+import { HeaderComponent } from './components/header/header/header.component';
 
 export const sharedComponents: any[] = [
     HeaderComponent,
 
 ];
 
-export * from './header/header/header.component';
+export * from './components/header/header/header.component';
