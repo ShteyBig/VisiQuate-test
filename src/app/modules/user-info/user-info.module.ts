@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { userInfoComponents } from '.';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [],
+  declarations: [...userInfoComponents],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule
+  ],
+  exports: [...userInfoComponents]
 })
 export class UserInfoModule { }

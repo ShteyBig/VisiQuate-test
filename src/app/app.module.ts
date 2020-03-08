@@ -8,6 +8,8 @@ import { sharedComponents } from './shared';
 import { RepoListViewModule } from './modules/repo-list-view/repo-list-view.module';
 import { UserListModule } from './modules/user-list/user-list.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UserInfoModule } from './modules/user-info/user-info.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     RepoListViewModule,
-    UserListModule
+    UserListModule,
+    UserInfoModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

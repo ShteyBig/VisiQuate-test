@@ -14,7 +14,7 @@ export class UserListService {
     ) { 
     }
 
-    getUsers(filter?: string): Observable<User[]> {
+    getUsers(): Observable<User[]> {
 
         let endPoint = '/users';
 
@@ -22,7 +22,7 @@ export class UserListService {
             .get(endPoint)
             .pipe(
                 map(res => res as User[])
-                );
+            );
     }
 
 }

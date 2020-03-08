@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserListService } from '../../user-list.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class UserListItemComponent implements OnInit {
 
     @Input() filteredUser: string;
 
-    constructor(private _userListService: UserListService) { }
+    constructor(private _userListService: UserListService, private router: Router) { }
 
     ngOnInit() {
     }
@@ -34,5 +35,9 @@ export class UserListItemComponent implements OnInit {
             },
             err => console.error(err),
         );
+    }
+
+    showUserInfo(userId: string){
+        this.router.navigate(['/userInfo'])
     }
 }
