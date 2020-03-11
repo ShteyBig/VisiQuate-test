@@ -10,6 +10,12 @@
     height: 60px;
     margin-top: 30px;
     position: relative;
+    display: flex;
+}
+
+.card:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
 
 img {
@@ -19,7 +25,6 @@ img {
 
 .user-login {
     font-weight: bold;
-    position: absolute;
-    top: 35%;
-    left: 10%;
+    padding: 20px 0;
+    font-size: large;
 }

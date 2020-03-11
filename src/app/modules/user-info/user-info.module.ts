@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { userInfoComponents } from '.';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [...userInfoComponents],
   imports: [
     CommonModule,
-    RouterModule
+    MatButtonModule,
+    RouterModule,
+
   ],
   exports: [...userInfoComponents]
 })

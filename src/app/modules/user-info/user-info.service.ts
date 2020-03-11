@@ -1,28 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, ObservableLike } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { User } from 'src/app/shared/models/user';
 import { ApiService } from 'src/app/shared/services/api.service';
 
 @Injectable({
     providedIn: 'root'
 })
-export class UserListService {
+export class UserInfoService {
+
 
     constructor(
         private api: ApiService
     ) {
-    }
-
-    getUsers(): Observable<User[]> {
-
-        let endPoint = '/users';
-
-        return this.api
-            .get(endPoint)
-            .pipe(
-                map(res => res as User[])
-            );
     }
 
     openUserInfo(currentUser: string): Observable<User> {
@@ -35,4 +25,14 @@ export class UserListService {
             )
     }
 
+    showRepos(currentUser: string): Observable<User> {
+        let endPoint = '/users' + '/' + currentUser + '/repos'
+
+        return this.api
+            .get(endPoint)
+            .pipe(
+                map(response => response as User)
+            )
+    }
+    
 }

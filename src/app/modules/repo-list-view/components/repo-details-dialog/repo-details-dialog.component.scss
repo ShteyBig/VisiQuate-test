@@ -1,0 +1,19 @@
+.repo-info-container {
+    position: relative;
+}
+
+.repos-info {
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.repos-info > * {
+    margin-top: 15px;
+}
+
+button {
+    background-color: lightgray;
+    position: absolute;
+    right: 10px;
+    top: -20px;
+}

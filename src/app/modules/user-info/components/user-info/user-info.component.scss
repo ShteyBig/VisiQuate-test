@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.user-photo { 
+    height: 300px;
+    width: 300px;
+
+}
+
+.user-info {
+    font-weight: bold;
+    margin-top: 50px;
+    list-style-type: none;
+}
+
+.user-info > * {
+    margin-top: 15px;
+}
+
+button {
+    background-color: lightgray;
+}

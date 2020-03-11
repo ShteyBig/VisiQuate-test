@@ -1,0 +1,25 @@
+<div class="repo-info-container">
+  <button mat-button mat-dialog-close>
+    <i class="material-icons">
+      close
+    </i>
+  </button>
+
+  <ul class="repos-info">
+    <li>
+      Name: {{userInfoData?.name}}
+    </li>
+    <li *ngIf="userInfoData?.description">
+      Description {{userInfoData?.description}}
+    </li>
+    <li *ngIf="userInfoData?.html_url">
+      URL: <a [href]="userInfoData?.html_url" target="blank">{{userInfoData?.html_url}}</a>
+    </li>
+    <li *ngIf="userInfoData?.forks_count">
+      Forks count: {{userInfoData?.forks_count}}
+    </li>
+    <li *ngIf="userInfoData?.watchers">
+      Watchers: {{userInfoData?.watchers}}
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 <div class="container">
     <ul *ngFor="let userCard of userFound">
-        <li class="card" (click)="showUserInfo(userCard.id)">
-            <img [src]="userCard.avatar_url" alt="">
+        <li class="card" (click)="showUserInfo(userCard)">
+            <img [src]="userCard.avatar_url" alt="user avatar">
             <span class="user-login">{{userCard.login}}</span>
         </li>
     </ul>

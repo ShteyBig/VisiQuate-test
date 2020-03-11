@@ -10,21 +10,23 @@ import { UserListModule } from './modules/user-list/user-list.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserInfoModule } from './modules/user-info/user-info.module';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ...sharedComponents
+    ...sharedComponents,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
     RepoListViewModule,
+    RouterModule,
     UserListModule,
     UserInfoModule,
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

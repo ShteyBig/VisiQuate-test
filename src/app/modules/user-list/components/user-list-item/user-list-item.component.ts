@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserListService } from '../../user-list.service'
 import { Router } from '@angular/router';
 
-
 @Component({
     selector: 'app-user-list-item',
     templateUrl: './user-list-item.component.html',
@@ -11,10 +10,14 @@ import { Router } from '@angular/router';
 export class UserListItemComponent implements OnInit {
 
     public userFound: any;
+    public currentUser: any;
 
     @Input() filteredUser: string;
 
-    constructor(private _userListService: UserListService, private router: Router) { }
+    constructor(
+        private _userListService: UserListService,
+        private router: Router
+        ) { }
 
     ngOnInit() {
     }
@@ -27,17 +30,19 @@ export class UserListItemComponent implements OnInit {
         this._userListService.getUsers().subscribe(
             usersData => {
                 if (userToFilter) {
-                    this.userFound = usersData.filter(data => data.login.match(userToFilter))
+                    this.userFound = usersData.filter(data => data.login.startsWith(userToFilter))
                 } else {
                     this.userFound = usersData
                 }
-                console.log("this.userFound", this.userFound)
             },
-            err => console.error(err),
         );
     }
 
-    showUserInfo(userId: string){
-        this.router.navigate(['/userInfo'])
+    showUserInfo(userId: any) {
+        this._userListService.openUserInfo(userId.login).subscribe(
+            data => {
+                this.router.navigate(['/userInfo', data.login])
+            }
+        )
     }
 }

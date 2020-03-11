@@ -1,0 +1,7 @@
+<section>
+    <ul>
+        <li *ngFor="let repoName of userRepos" class="user-repos" (click)="openDescription(repoName)" (focus)="!focusState">
+            {{repoName.name}}
+        </li>
+    </ul>
+</section>

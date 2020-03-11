@@ -1,1 +1,25 @@
-<p>user-info works!</p>
+<section>
+  <div class="user-img" *ngIf="userInfoData?.avatar_url">
+    <img  [src]="userInfoData.avatar_url" alt="" class="user-photo">
+  </div>
+  <ul class="user-info">
+	  <li>
+		Name: {{userInfoData?.name}}
+	  </li>
+	  <li *ngIf="userInfoData?.company">
+		Company {{userInfoData?.company}}
+	  </li>
+	  <li *ngIf="userInfoData?.blog">
+		Blog: <a [href]="userInfoData?.blog" target="blank">{{userInfoData?.blog}}</a>
+	  </li>
+	  <li *ngIf="userInfoData?.followers">
+		Folowers: {{userInfoData?.followers}}
+	  </li>
+	  <li *ngIf="userInfoData?.updated_at">
+		Last updated at: {{userInfoData?.updated_at}}
+	  </li>
+	  <button (click)="showUserRepos()" mat-button>
+		  View Repos
+	  </button>
+	</ul>
+</section>
