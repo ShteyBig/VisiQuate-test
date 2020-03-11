@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserSearchComponent } from './user-search.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('UserSearchComponent', () => {
   let component: UserSearchComponent;
@@ -8,7 +10,8 @@ describe('UserSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserSearchComponent ]
+      declarations: [ UserSearchComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
