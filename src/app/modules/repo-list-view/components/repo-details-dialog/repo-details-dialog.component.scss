@@ -5,10 +5,10 @@
 .repos-info {
     font-weight: bold;
     list-style-type: none;
-}
 
-.repos-info > * {
-    margin-top: 15px;
+    & > * {
+        margin-top: 15px;
+    }
 }
 
 button {

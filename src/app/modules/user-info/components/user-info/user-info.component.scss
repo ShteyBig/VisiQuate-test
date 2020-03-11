@@ -14,10 +14,10 @@ section {
     font-weight: bold;
     margin-top: 50px;
     list-style-type: none;
-}
 
-.user-info > * {
-    margin-top: 15px;
+    & > * {
+        margin-top: 15px;
+    }
 }
 
 button {
