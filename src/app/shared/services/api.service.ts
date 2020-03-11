@@ -38,10 +38,9 @@ export class ApiService {
 
         if (endPoint.startsWith(' ')) {
             url = this.apiServer + '/' + endPoint;
-        } else {
-            url = this.apiServer + endPoint;
-        }
-
+        } 
+        url = this.apiServer + endPoint;
+        
         return url
     }
 

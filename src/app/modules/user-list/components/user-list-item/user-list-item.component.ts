@@ -30,7 +30,8 @@ export class UserListItemComponent implements OnInit {
         this._userListService.getUsers().subscribe(
             usersData => {
                 if (userToFilter) {
-                    this.userFound = usersData.filter(data => data.login.startsWith(userToFilter))
+                    this.userFound = usersData.filter(data => data.login.toLowerCase()
+                        .startsWith(userToFilter.toLowerCase()))
                 } else {
                     this.userFound = usersData
                 }
