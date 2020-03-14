@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { UserListService } from '../../user-list.service'
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { UserListService } from '../../user-list.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
     templateUrl: './user-list-item.component.html',
     styleUrls: ['./user-list-item.component.scss']
 })
-export class UserListItemComponent implements OnInit {
+export class UserListItemComponent implements OnInit, OnChanges {
 
     public userFound: any;
     public currentUser: any;
@@ -15,7 +15,7 @@ export class UserListItemComponent implements OnInit {
     @Input() filteredUser: string;
 
     constructor(
-        private _userListService: UserListService,
+        private userListService: UserListService,
         private router: Router
         ) { }
 
@@ -23,27 +23,27 @@ export class UserListItemComponent implements OnInit {
     }
 
     ngOnChanges() {
-        this.filterUsers(this.filteredUser)
+        this.filterUsers(this.filteredUser);
     }
 
     filterUsers(userToFilter?: string) {
-        this._userListService.getUsers().subscribe(
+        this.userListService.getUsers().subscribe(
             usersData => {
                 if (userToFilter) {
                     this.userFound = usersData.filter(data => data.login.toLowerCase()
-                        .startsWith(userToFilter.toLowerCase()))
+                        .startsWith(userToFilter.toLowerCase()));
                 } else {
-                    this.userFound = usersData
+                    this.userFound = usersData;
                 }
             },
         );
     }
 
     showUserInfo(userId: any) {
-        this._userListService.openUserInfo(userId.login).subscribe(
+        this.userListService.openUserInfo(userId.login).subscribe(
             data => {
-                this.router.navigate(['/userInfo', data.login])
+                this.router.navigate(['/userInfo', data.login]);
             }
-        )
+        );
     }
 }

@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToMainPage(){
-    this.router.navigate(['/userList'])
+  goToMainPage() {
+    this.router.navigate(['/userList']);
   }
 
 }

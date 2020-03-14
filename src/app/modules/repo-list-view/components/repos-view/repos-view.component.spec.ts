@@ -11,7 +11,7 @@ describe('ReposViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterTestingModule, MatDialogModule], 
+      imports: [HttpClientModule, RouterTestingModule, MatDialogModule],
       declarations: [ ReposViewComponent ]
     })
     .compileComponents();

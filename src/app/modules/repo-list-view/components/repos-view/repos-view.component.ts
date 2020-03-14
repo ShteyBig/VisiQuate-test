@@ -16,39 +16,39 @@ export class ReposViewComponent implements OnInit {
     userInfoData: any;
     userRepos: any;
     repoNames: any;
-    focusState: boolean = false;
+    focusState = false;
     itemDescription: MatDialogRef<RepoDetailsDialogComponent>;
 
     constructor(
-        private _repoListViewService: RepoListViewService,
-        private _userInfoService: UserInfoService,
-        private router: Router, 
+        private repoListViewService: RepoListViewService,
+        private userInfoService: UserInfoService,
+        private router: Router,
         private dialog: MatDialog
     ) {
     }
 
     ngOnInit() {
-        this.currentUsersUrl = this.router.url.split("/").pop();
-        this._userInfoService.openUserInfo(this.currentUsersUrl).subscribe(
+        this.currentUsersUrl = this.router.url.split('/').pop();
+        this.userInfoService.openUserInfo(this.currentUsersUrl).subscribe(
             data => {
                 this.userInfoData = data;
             }
-        )
+        );
         this.loadRepos();
     }
 
     loadRepos() {
-        this._userInfoService.showRepos(this.currentUsersUrl)
+        this.userInfoService.showRepos(this.currentUsersUrl)
             .subscribe(
                 data => {
-                    this.userRepos = data
+                    this.userRepos = data;
                 },
-            )
+            );
     }
 
 
     openDescription(repoName: any) {
-        this._repoListViewService.currentRepoData(repoName)
+        this.repoListViewService.currentRepoData(repoName);
         this.itemDescription = this.dialog.open(RepoDetailsDialogComponent);
     }
 }

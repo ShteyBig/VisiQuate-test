@@ -9,14 +9,14 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 export class ApiService {
 
     private headers: Headers = new Headers();
-    private requestOptions: HttpRequest<any>
-    private apiServer: string = "https://api.github.com";
+    private requestOptions: HttpRequest<any>;
+    private apiServer = 'https://api.github.com';
 
     constructor(
         private http: HttpClient
 
     ) {
-        this.headers.set("Content-Type", "application/json")
+        this.headers.set('Content-Type', 'application/json');
 
     }
 
@@ -28,7 +28,6 @@ export class ApiService {
         return this.http.post(this.createUrl(endPoint), body);
     }
 
-    
     options(endPoint: string, options?: any) {
         return this.http.post(this.createUrl(endPoint), this.getRequestOptions(options));
     }
@@ -38,15 +37,15 @@ export class ApiService {
 
         if (endPoint.startsWith(' ')) {
             url = this.apiServer + '/' + endPoint;
-        } 
+        }
         url = this.apiServer + endPoint;
-        
-        return url
+
+        return url;
     }
 
     getRequestOptions(options?: any) {
         if (options) {
-            options = new Object(this.requestOptions)
+            options = new Object(this.requestOptions);
         }
 
         return this.requestOptions;

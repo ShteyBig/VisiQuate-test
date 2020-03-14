@@ -9,8 +9,8 @@ import { FormControl } from '@angular/forms';
 export class UserSearchComponent implements OnInit {
 
 
-  private searchByName = new FormControl('')
-  
+  private searchByName = new FormControl('');
+
   constructor() { }
 
   @Output() userToFind: EventEmitter<string> = new EventEmitter<string>();
@@ -18,8 +18,8 @@ export class UserSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  filterUser(){
-    this.userToFind.emit(this.searchByName.value)
+  filterUser() {
+    this.userToFind.emit(this.searchByName.value);
   }
 
 }

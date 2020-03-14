@@ -14,7 +14,7 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSearchUser(event: string){
+  onSearchUser(event: string) {
     this.searchUser = event;
   }
 }

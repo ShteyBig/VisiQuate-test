@@ -16,7 +16,7 @@ export class UserListService {
 
     getUsers(): Observable<User[]> {
 
-        let endPoint = '/users';
+        const endPoint = '/users';
 
         return this.api
             .get(endPoint)
@@ -26,13 +26,13 @@ export class UserListService {
     }
 
     openUserInfo(currentUser: string): Observable<User> {
-        let endPoint = '/users' + '/' + currentUser
+        const endPoint = '/users' + '/' + currentUser;
 
         return this.api
             .get(endPoint)
             .pipe(
                 map(response => response as User)
-            )
+            );
     }
 
 }

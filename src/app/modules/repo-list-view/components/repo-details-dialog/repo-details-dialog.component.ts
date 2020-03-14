@@ -13,15 +13,14 @@ export class RepoDetailsDialogComponent implements OnInit {
     userInfoData: any;
 
     constructor(
-        private _repoListViewService: RepoListViewService,
+        private repoListViewService: RepoListViewService,
     ) { }
 
 
     ngOnInit() {
-        this._repoListViewService.repoDescription$.subscribe(data =>
-            { 
-                this.userInfoData = data
-            })
+        this.repoListViewService.repoDescription$.subscribe(data => {
+            this.userInfoData = data;
+        });
     }
 
 }

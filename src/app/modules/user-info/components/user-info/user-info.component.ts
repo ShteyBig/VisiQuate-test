@@ -14,25 +14,25 @@ export class UserInfoComponent implements OnInit {
     userInfoData: any;
 
     constructor(
-        private _userInfoService: UserInfoService, private router: Router
+        private userInfoService: UserInfoService, private router: Router
     ) {
     }
 
     ngOnInit() {
-        this.currentUsersUrl = this.router.url.split("/").pop();
-        this._userInfoService.openUserInfo(this.currentUsersUrl).subscribe(
+        this.currentUsersUrl = this.router.url.split('/').pop();
+        this.userInfoService.openUserInfo(this.currentUsersUrl).subscribe(
             data => {
                 this.userInfoData = data;
             }
-        )
+        );
     }
 
     showUserRepos() {
-        this._userInfoService.showRepos(this.userInfoData.login).subscribe(
+        this.userInfoService.showRepos(this.userInfoData.login).subscribe(
             data => {
-                this.router.navigate(['/repoListView', this.userInfoData.login])
+                this.router.navigate(['/repoListView', this.userInfoData.login]);
             }
-        )
+        );
     }
 
 

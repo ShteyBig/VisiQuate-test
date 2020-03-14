@@ -5,6 +5,6 @@ export class User {
     company?: string;
     email?: string;
     subscribers?: string;
-    updated_at?: string;
-    avatar_url?: string;
+    updatedAt?: string;
+    avatarUrl?: string;
 }
