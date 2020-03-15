@@ -17,7 +17,7 @@ export class UserListItemComponent implements OnInit, OnChanges {
     constructor(
         private userListService: UserListService,
         private router: Router
-        ) { }
+    ) { }
 
     ngOnInit() {
     }
@@ -27,14 +27,9 @@ export class UserListItemComponent implements OnInit, OnChanges {
     }
 
     filterUsers(userToFilter?: string) {
-        this.userListService.getUsers().subscribe(
+        this.userListService.getUsers(userToFilter).subscribe(
             usersData => {
-                if (userToFilter) {
-                    this.userFound = usersData.filter(data => data.login.toLowerCase()
-                        .startsWith(userToFilter.toLowerCase()));
-                } else {
-                    this.userFound = usersData;
-                }
+                this.userFound = userToFilter ? usersData.items : usersData;
             },
         );
     }

@@ -14,14 +14,16 @@ export class UserListService {
     ) {
     }
 
-    getUsers(): Observable<User[]> {
+    getUsers(userName?: any): Observable<User> {
+        let endPoint = '/users';
 
-        const endPoint = '/users';
-
+        if (userName) {
+            endPoint = '/search/users?q=' + userName;
+        }
         return this.api
             .get(endPoint)
             .pipe(
-                map(res => res as User[])
+                map(res => res as User)
             );
     }
 
